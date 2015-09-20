@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # Polls
   get '/polls', to: 'main#polls'
   get '/polls_chart', to: 'main#polls_chart'
+  # Clear data
+  get '/clear', to: 'main#clear'
 end
