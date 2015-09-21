@@ -1,7 +1,6 @@
-# Abh-server
+#  Always be hacking - Slides server
 
 Server for [buren/abh](https://github.com/buren/abh) talk.
-
 
 ## tl;dr - Single click deploy
 
@@ -29,7 +28,10 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
 
-## Deploy
+You can also deploy this app to Heroku by running
 
-__Single click deploy__: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy).
-
+```bash
+% heroku create your-name    # Create app
+% git push heroku master     # Deploy app
+% heroku run rake db:migrate # Migrate database
+```
