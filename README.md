@@ -2,6 +2,11 @@
 
 Server for [buren/abh](https://github.com/buren/abh) talk.
 
+
+## tl;dr - Single click deploy
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
@@ -23,3 +28,8 @@ is [purposefully excluded from the project's `Gemfile`][exclude].
 
 [foreman]: https://github.com/ddollar/foreman
 [exclude]: https://github.com/ddollar/foreman/pull/437#issuecomment-41110407
+
+## Deploy
+
+__Single click deploy__: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy).
+

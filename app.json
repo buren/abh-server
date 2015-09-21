@@ -1,0 +1,12 @@
+{
+  "name": "Abh Server",
+  "description": "Simple Rails app that works as a backend for https://github.com/buren/abh",
+  "repository": "https://github.com/buren/abh-server",
+  "keywords": ["rails", "slides"],
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
