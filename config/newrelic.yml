@@ -1,5 +1,5 @@
 common: &default_settings
-  app_name: "abh-server"
+  app_name: "poller-server"
   audit_log:
     enabled: false
   browser_monitoring:
@@ -30,5 +30,5 @@ production:
   monitor_mode: true
 staging:
   <<: *default_settings
-  app_name: "abh-server (Staging)"
+  app_name: "poller-server (Staging)"
   monitor_mode: true
