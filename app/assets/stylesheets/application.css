@@ -2,7 +2,11 @@
  = require github-markdown
 */
 
-.container {
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+}
+
+.small-container {
   max-width: 680px;
   margin: 0 auto;
 }
