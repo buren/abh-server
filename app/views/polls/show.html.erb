@@ -1,0 +1,64 @@
+<% content_for :header do %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="https://www.google.com/jsapi"></script>
+<% end %>
+
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <button class="btn btn-success btn-block" onclick="submitAnswer(this)" data-value="Love it">Love it</button>
+      <button class="btn btn-danger btn-block" onclick="submitAnswer(this)" data-value="Hate it">Hate it</button>
+      <button class="btn btn-info btn-block" onclick="submitAnswer(this)" data-value="Indifferent">Indifferent</button>
+    </div>
+    <div class="col-sm-9">
+      <div id="chart"></div>
+      <button class="btn btn-default btn-block" onclick="getResult()">Update chart</button>
+    </div>
+  </div>
+</div>
+
+<%= render 'polls/chartkick' %>
+
+<script type="text/javascript">
+  function parseParam(val) {
+    var result = null,
+        tmp = [];
+    location.search
+    //.replace ( "?", "" )
+    // this is better, there might be a question mark inside
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
+  }
+
+  var max = 10000000;
+  var min = 0;
+  QUESTION = parseParam('question') || Math.floor(Math.random() * (max - min + 1)) + min;
+
+  function getResult() {
+    var url = '/result';
+    $.getJSON(url, {question: QUESTION}, function(result) {
+      new Chartkick.ColumnChart('chart', result);
+      setInterval(function() {
+        Chartkick.updateChart('chart');
+      }, 2000);
+    });
+  }
+
+  function submitAnswer(element) {
+    var $el = $(element);
+    var value = $el.attr('data-value');
+    var url = '/poll';
+    $.getJSON(url, {question: QUESTION, value: value}, function(response) {
+      console.log('Answer.');
+    });
+  }
+
+  getResult();
+</script>

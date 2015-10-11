@@ -6,6 +6,8 @@ Simply, simple polls.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+Then view your result at `show_poll?question=your-question-id`.
+
 ## API
 
 If you don't want to implement your own client implementation, see [buren/poller](https://github.com/buren/poller).

@@ -1,4 +1,9 @@
 class PollsController < ApplicationController
+  # GET /show_poll
+  def show
+    render 'polls/show'
+  end
+
   # GET /poll
   def poll
     render json: simple_save(poll_record)

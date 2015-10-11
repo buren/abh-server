@@ -10,3 +10,8 @@
 img {
   max-width: 100%;
 }
+
+.btn.btn-default {
+    background-color: #fff;
+    border: 1px solid #9C9C9C;
+}
