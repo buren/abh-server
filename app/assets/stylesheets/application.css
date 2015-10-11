@@ -1,0 +1,12 @@
+/*
+ = require github-markdown
+*/
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,8 +1,8 @@
 {
-  "name": "Abh Server",
-  "description": "Simple Rails app that works as a backend for https://github.com/buren/abh",
+  "name": "Poller Server",
+  "description": "Throw away polls.",
   "repository": "https://github.com/buren/poller-server",
-  "keywords": ["rails", "slides"],
+  "keywords": ["rails", "polls"],
   "env": {
     "RAILS_ENV": "production"
   },

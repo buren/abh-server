@@ -1,12 +1,42 @@
-#  Always be hacking - Slides server
+# Poller server
 
-Server for [buren/abh](https://github.com/buren/abh) talk.
+Simply, simple polls.
 
 ## tl;dr - Single click deploy
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-### Getting Started
+## API
+
+If you don't want to implement your own client implementation, see [buren/poller](https://github.com/buren/poller).
+
+__Submit__:
+
+_Note_: Make sure you send `GET` requests.
+
+Poll answer
+```
+/poll?question=weather&answer=Love+it
+```
+
+Point answer
+```
+/poll?points=true&question=person&x=Joe+Bloggs&y=32
+```
+
+__Result__:
+
+Poll result
+```
+/result?question=weather
+```
+
+Points result
+```
+/result?points=true&question=person
+```
+
+## Development - Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:
