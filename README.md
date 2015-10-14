@@ -67,3 +67,4 @@ You can also deploy this app to Heroku by running
 % git push heroku master     # Deploy app
 % heroku run rake db:migrate # Migrate database
 ```
+
