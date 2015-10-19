@@ -38,9 +38,11 @@ class PollsController < ApplicationController
   end
 
   def answer_record
+    answer = params[:value]
+    answer = params[:answer] if answer.blank?
     Answer.create(
       question: params[:question],
-      answer: params[:value]
+      answer: answer
     )
   end
 
