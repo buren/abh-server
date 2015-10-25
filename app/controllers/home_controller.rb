@@ -7,18 +7,18 @@ class HomeController < ApplicationController
   # Clear database
   def clear
     status = 200
-    type = params[:type]
+    question = params[:question]
     record = params[:record]
 
-    if type.blank?
+    if question.blank?
       status = 422
-      message = "type can't be blank"
+      message = "question can't be blank"
     else
       if record == 'point'
-        Point.where(question: type).delete_all
+        Point.where(question: question).delete_all
         message = 'Points deleted.'
       elsif record == 'poll'
-        Answer.where(question: type).delete_all
+        Answer.where(question: question).delete_all
         message = 'Answer deleted.'
       else
         status = 422
