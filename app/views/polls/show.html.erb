@@ -19,7 +19,6 @@
     </div>
     <div class="col-sm-9">
       <div id="chart"></div>
-      <button class="btn btn-default btn-block" onclick="getResult()">Update chart</button>
     </div>
   </div>
 </div>
@@ -64,8 +63,7 @@
     var url = '/poll';
     $.getJSON(url, {question: QUESTION, value: value}, function(response) {
       console.log('Answer.');
+      getResult();
     });
   }
-
-  getResult();
 </script>
